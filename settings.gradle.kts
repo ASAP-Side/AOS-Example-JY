@@ -13,8 +13,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AOS-Example-JY"
-include(":app")
+rootProject.name = "My Application"
 include(":presentation")
+include(":app")
 include(":data")
 include(":domain")
