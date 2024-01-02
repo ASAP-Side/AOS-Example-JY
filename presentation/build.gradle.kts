@@ -8,44 +8,21 @@ android {
     compileSdk = Apps.compileSdk
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
+        //applicationId = "com.example.myapplication"
         minSdk = Apps.minSdk
-        targetSdk = Apps.targetSdk
-        versionCode = Apps.versionCode
-        versionName = Apps.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
     compileOptions {
         sourceCompatibility = Apps.sourceCompatibility
         targetCompatibility = Apps.targetCompatibility
     }
+
     kotlinOptions {
         jvmTarget = Apps.jvmTarget
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 

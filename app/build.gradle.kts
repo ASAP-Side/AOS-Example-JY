@@ -9,20 +9,11 @@ android {
 
     defaultConfig {
         minSdk = Apps.minSdk
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        targetSdk = Apps.targetSdk
+        versionCode = Apps.versionCode
+        versionName = Apps.versionName
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
     compileOptions {
         sourceCompatibility = Apps.sourceCompatibility
         targetCompatibility = Apps.targetCompatibility
