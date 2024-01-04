@@ -4,13 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.example.presentation"
     compileSdk = Apps.compileSdk
 
     defaultConfig {
-        //applicationId = "com.example.myapplication"
         minSdk = Apps.minSdk
-
     }
 
     compileOptions {
@@ -24,10 +22,14 @@ android {
     buildFeatures {
         compose = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
+    }
 }
 
 dependencies {
     implementation(project(Modules.Domain))
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(Dependencies.Core.Core)
     implementation(Dependencies.Lifecycle.Runtime)
     Dependencies.Compose.core.forEach(::implementation)
