@@ -54,7 +54,8 @@ fun TestFrame() {
         )
         Spacer(Modifier.height(26.dp))
 
-
+        DayOfWeekButtonList()
+        Spacer(Modifier.height(18.dp))
     }
 }
 
