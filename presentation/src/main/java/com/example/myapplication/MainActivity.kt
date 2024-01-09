@@ -77,6 +77,8 @@ fun TestFrame() {
             fontSize = 18.sp,
         )
         Spacer(Modifier.height(7.dp))
+
+        AlarmItemBoxList()
     }
 }
 
