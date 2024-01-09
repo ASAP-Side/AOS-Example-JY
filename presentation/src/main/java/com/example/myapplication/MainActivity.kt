@@ -12,11 +12,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.myapplication.ui.theme.Pink
 import com.example.myapplication.ui.theme.White
@@ -65,6 +68,15 @@ fun TestFrame() {
 
         MusicSelectButton()
         Spacer(Modifier.height(20.dp))
+
+        Text(
+            modifier = Modifier
+                .fillMaxWidth(),
+            text = "알림 리스트",
+            textAlign = TextAlign.Start,
+            fontSize = 18.sp,
+        )
+        Spacer(Modifier.height(7.dp))
     }
 }
 
