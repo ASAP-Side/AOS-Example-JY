@@ -62,6 +62,9 @@ fun TestFrame() {
 
         AlarmTypeButtonList()
         Spacer(Modifier.height(20.dp))
+
+        MusicSelectButton()
+        Spacer(Modifier.height(20.dp))
     }
 }
 
