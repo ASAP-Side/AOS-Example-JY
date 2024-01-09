@@ -10,4 +10,7 @@
     <string name="end_year">종료 년</string>
     <string name="end_month">종료 월</string>
     <string name="end_date">종료 일</string>
+    <string name="sound">소리</string>
+    <string name="vibration">진동</string>
+    <string name="sound_and_vibration">소리/진동</string>
 </resources>
