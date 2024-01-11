@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
@@ -17,6 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
@@ -27,13 +27,13 @@ import com.example.presentation.R
 @Composable
 fun EndDateButton(
     text: Int,
-    width: Int,
+    width: Dp,
 ) {
     Box(
         modifier = Modifier
             .clip(RectangleShape)
-            .width(width.dp)
             .height(35.dp)
+            .width(width)
             .background(color = SweetPotato)
             .clickable { /*TODO*/ }
     ) {
@@ -55,9 +55,9 @@ fun EndDateButtonList(
             .fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
-        EndDateButton(text = R.string.end_year, width = 91)
-        EndDateButton(text = R.string.end_month, width = 46)
-        EndDateButton(text = R.string.end_date, width = 46)
+        EndDateButton(text = R.string.end_year, width = 91.dp)
+        EndDateButton(text = R.string.end_month, width = 46.dp)
+        EndDateButton(text = R.string.end_date, width = 46.dp)
     }
 }
 

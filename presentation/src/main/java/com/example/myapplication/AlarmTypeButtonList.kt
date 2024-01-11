@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.Black
@@ -33,7 +34,7 @@ import com.example.presentation.R
 data class ButtonItem(
     val index: Int,
     val label: String,
-    val width: Int,
+    val width: Dp,
 )
 
 @Composable
@@ -47,8 +48,8 @@ fun AlarmTypeButton(
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(30.dp))
-            .width(item.width.dp)
             .height(36.dp)
+            .width(item.width)
             .clickable { onTap() }
             .background(color = bgColor)
     ) {
