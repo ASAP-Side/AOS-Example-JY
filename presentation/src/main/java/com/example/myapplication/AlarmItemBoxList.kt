@@ -19,7 +19,6 @@ import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.myapplication.ui.theme.SweetPotato
 import com.example.myapplication.ui.theme.White
 
-
 data class AlarmItem(
     val meridiem: String,
     val hour: Int,
@@ -33,12 +32,11 @@ data class AlarmItem(
 @Composable
 fun AlarmItemBox(
     item: AlarmItem,
-    height: Int,
 ) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(height.dp)
+            .height(70.dp)
             .background(SweetPotato)
     ) {
         Text(
@@ -78,7 +76,7 @@ fun AlarmItemBoxList() {
             .fillMaxWidth()
     ) {
         items(itemList) { item ->
-            AlarmItemBox(item = item, height = 70)
+            AlarmItemBox(item = item)
 
         }
     }

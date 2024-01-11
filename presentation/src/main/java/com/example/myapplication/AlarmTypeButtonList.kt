@@ -47,8 +47,8 @@ fun AlarmTypeButton(
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(30.dp))
-            .fillMaxHeight()
             .width(item.width.dp)
+            .height(36.dp)
             .clickable { onTap() }
             .background(color = bgColor)
     ) {
@@ -77,7 +77,6 @@ fun AlarmTypeButtonList() {
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxWidth()
-            .height(36.dp)
     ) {
         items(buttonItemList) { item ->
             AlarmTypeButton(

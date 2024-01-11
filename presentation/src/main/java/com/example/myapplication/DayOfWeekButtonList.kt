@@ -39,7 +39,7 @@ fun DayOfWeekButton(
     Box(
         modifier = Modifier
             .clip(CircleShape)
-            .fillMaxHeight()
+            .height(40.dp)
             .width(40.dp)
             .background(color = bgColor)
             .clickable { selected = !selected },
@@ -59,7 +59,6 @@ fun DayOfWeekButtonList() {
     Row(
         Modifier
             .fillMaxWidth()
-            .height(40.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         DayOfWeekButton(text = R.string.monday)

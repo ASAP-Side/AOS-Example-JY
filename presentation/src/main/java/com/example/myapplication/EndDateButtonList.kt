@@ -32,8 +32,8 @@ fun EndDateButton(
     Box(
         modifier = Modifier
             .clip(RectangleShape)
-            .fillMaxHeight()
             .width(width.dp)
+            .height(35.dp)
             .background(color = SweetPotato)
             .clickable { }
     ) {
@@ -53,7 +53,6 @@ fun EndDateButtonList(
     Row(
         Modifier
             .fillMaxWidth()
-            .height(35.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         EndDateButton(text = R.string.end_year, width = 91)
