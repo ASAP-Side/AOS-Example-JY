@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -29,16 +30,14 @@ import com.example.myapplication.ui.theme.Gray
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.presentation.R
 
-enum class AlarmType(val stringRes: Int, val width: Dp) {
-    SOUND(R.string.sound, 54.dp),
-    VIBRATION(R.string.vibration, 54.dp),
-    SOUND_AND_VIBRATION(R.string.sound_and_vibration, 89.dp),
+enum class AlarmType(val stringRes: Int) {
+    SOUND(R.string.sound),
+    VIBRATION(R.string.vibration),
+    SOUND_AND_VIBRATION(R.string.sound_and_vibration),
 }
 
 data class ButtonItem(
-    val index: Int,
     val label: String,
-    val width: Dp,
 )
 
 @Composable
@@ -53,16 +52,16 @@ fun AlarmTypeButton(
         modifier = Modifier
             .clip(RoundedCornerShape(30.dp))
             .height(36.dp)
-            .width(item.width)
             .clickable { onTap() }
             .background(color = bgColor)
     ) {
         Text(
             modifier = Modifier
+                .padding(horizontal = 12.dp, vertical = 8.dp)
                 .align(Alignment.Center),
             text = item.label,
             color = Black,
-            fontSize = 18.sp,
+            fontSize = 16.sp,
         )
     }
 }
@@ -70,15 +69,9 @@ fun AlarmTypeButton(
 
 @Composable
 fun AlarmTypeButtonList() {
-    val buttonItemList = mutableListOf<ButtonItem>()
-
-    AlarmType.values().forEachIndexed() { index, alarmType ->
-        buttonItemList.add(
-            ButtonItem(
-                index,
-                stringResource(id = alarmType.stringRes),
-                alarmType.width
-            )
+    val buttonItems = AlarmType.values().map { alarmType ->
+        ButtonItem(
+            stringResource(id = alarmType.stringRes)
         )
     }
 
@@ -89,11 +82,11 @@ fun AlarmTypeButtonList() {
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        buttonItemList.forEach { item ->
+        buttonItems.forEachIndexed { index, item ->
             AlarmTypeButton(
                 item = item,
-                isSelected = selectedIndex == item.index,
-                onTap = { selectedIndex = item.index }
+                isSelected = selectedIndex == index,
+                onTap = { selectedIndex = index }
             )
         }
     }
