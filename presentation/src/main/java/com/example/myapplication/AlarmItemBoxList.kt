@@ -73,7 +73,6 @@ fun AlarmItemBoxList() {
         AlarmItem("오후", 6, 30, 2024, 1, 19, "화요일"),
     )
     LazyColumn(
-        state = scrollState,
         modifier = Modifier
             .fillMaxWidth()
     ) {
