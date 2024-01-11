@@ -56,7 +56,7 @@ fun AlarmItemBox(
         )
     }
 
-    Spacer(Modifier.height(5.dp))
+    Spacer(modifier = Modifier.height(5.dp))
 }
 
 @Composable

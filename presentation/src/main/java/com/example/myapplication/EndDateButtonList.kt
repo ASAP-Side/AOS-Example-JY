@@ -51,8 +51,8 @@ fun EndDateButton(
 fun EndDateButtonList(
 ) {
     Row(
-        Modifier
-            .fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         EndDateButton(text = R.string.end_year, width = 91)

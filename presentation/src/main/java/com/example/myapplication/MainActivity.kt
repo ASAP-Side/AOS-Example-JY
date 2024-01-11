@@ -56,19 +56,19 @@ fun TestFrame() {
                 .fillMaxWidth()
                 .height(103.dp)
         )
-        Spacer(Modifier.height(26.dp))
+        Spacer(modifier = Modifier.height(26.dp))
 
         DayOfWeekButtonList()
-        Spacer(Modifier.height(18.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         EndDateButtonList()
-        Spacer(Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         AlarmTypeButtonList()
-        Spacer(Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         MusicSelectButton()
-        Spacer(Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Text(
             modifier = Modifier
@@ -77,7 +77,7 @@ fun TestFrame() {
             textAlign = TextAlign.Start,
             fontSize = 18.sp,
         )
-        Spacer(Modifier.height(7.dp))
+        Spacer(modifier = Modifier.height(7.dp))
 
         AlarmItemBoxList()
     }

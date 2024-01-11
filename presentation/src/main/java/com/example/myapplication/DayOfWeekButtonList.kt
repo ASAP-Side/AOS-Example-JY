@@ -68,8 +68,8 @@ fun DayOfWeekButtonList() {
     val dayOfWeekSelects = remember { DayOfWeek.values().map { false }.toMutableStateList() }
 
     Row(
-        Modifier
-            .fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         DayOfWeek.values().forEachIndexed { index, dayOfWeek ->
