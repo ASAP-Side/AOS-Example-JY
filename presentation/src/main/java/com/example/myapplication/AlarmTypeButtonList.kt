@@ -84,19 +84,18 @@ fun AlarmTypeButtonList() {
 
     var selectedIndex by rememberSaveable { mutableStateOf(0) }
 
-    LazyRow(
+    Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        items(buttonItemList) { item ->
+        buttonItemList.forEach { item ->
             AlarmTypeButton(
                 item = item,
                 isSelected = selectedIndex == item.index,
                 onTap = { selectedIndex = item.index }
             )
         }
-
     }
 }
 
