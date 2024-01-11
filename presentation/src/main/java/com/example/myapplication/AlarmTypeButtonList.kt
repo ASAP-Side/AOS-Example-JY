@@ -4,12 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,6 +28,12 @@ import com.example.myapplication.ui.theme.Blue
 import com.example.myapplication.ui.theme.Gray
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.presentation.R
+
+enum class AlarmType(val stringRes: Int, val width: Dp) {
+    SOUND(R.string.sound, 54.dp),
+    VIBRATION(R.string.vibration, 54.dp),
+    SOUND_AND_VIBRATION(R.string.sound_and_vibration, 89.dp),
+}
 
 data class ButtonItem(
     val index: Int,
@@ -66,11 +70,17 @@ fun AlarmTypeButton(
 
 @Composable
 fun AlarmTypeButtonList() {
-    val buttonItemList = listOf(
-        ButtonItem(0, stringResource(id = R.string.sound), 54),
-        ButtonItem(1, stringResource(id = R.string.vibration), 54),
-        ButtonItem(2, stringResource(id = R.string.sound_and_vibration), 89)
-    )
+    val buttonItemList = mutableListOf<ButtonItem>()
+
+    AlarmType.values().forEachIndexed() { index, alarmType ->
+        buttonItemList.add(
+            ButtonItem(
+                index,
+                stringResource(id = alarmType.stringRes),
+                alarmType.width
+            )
+        )
+    }
 
     var selectedIndex by rememberSaveable { mutableStateOf(0) }
 
