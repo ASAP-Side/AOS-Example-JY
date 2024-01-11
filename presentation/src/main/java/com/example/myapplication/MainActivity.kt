@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -49,7 +50,7 @@ fun TestFrame() {
             .padding(start = 20.dp, end = 20.dp, top = 35.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Spacer(
+        Box(
             modifier = Modifier
                 .background(Pink)
                 .fillMaxWidth()
