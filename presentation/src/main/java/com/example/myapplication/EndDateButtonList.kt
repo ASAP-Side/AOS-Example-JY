@@ -35,7 +35,7 @@ fun EndDateButton(
             .width(width.dp)
             .height(35.dp)
             .background(color = SweetPotato)
-            .clickable { }
+            .clickable { /*TODO*/ }
     ) {
         Text(
             modifier = Modifier
