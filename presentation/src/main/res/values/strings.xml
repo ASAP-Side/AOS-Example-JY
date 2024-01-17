@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">AOS_Example_JY</string>
+    <string name="monday">월</string>
+    <string name="tuesday">화</string>
+    <string name="wednesday">수</string>
+    <string name="thursday">목</string>
+    <string name="friday">금</string>
+    <string name="saturday">토</string>
+    <string name="sunday">일</string>
+    <string name="end_year">종료 년</string>
+    <string name="end_month">종료 월</string>
+    <string name="end_date">종료 일</string>
+    <string name="sound">소리</string>
+    <string name="vibration">진동</string>
+    <string name="sound_and_vibration">소리/진동</string>
+    <string name="select_music">음악 파일 선택</string>
 </resources>
